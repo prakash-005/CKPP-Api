@@ -58,11 +58,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
  
 // Middleware
-app.use(cors({origin:"*"}));
+app.use(cors());
 // app.use(express.json());
  
 // MongoDB Atlas connection
-const MONGO_URI = 'mongodb+srv://prakashhepl:pTOyQ9notf8qmSKB@cluster0.mibai.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI;
  
 mongoose.connect(MONGO_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
